@@ -10,15 +10,15 @@ A Flutter plugin for Android automatic SMS verification using Google’s SMS ret
 ### Example
 
 ````dart in html
-    SmsRetriever.getAppSignature().then((signature){
+    SmsRetrieverApi.getAppSignature().then((signature){
 
       print(signature); // use it in sms body.
-      return SmsRetriever.startListening();}).then((x){
+      return SmsRetrieverApi.startListening();}).then((x){
       String smsCode = x; // otp code (digit only)
       print("sms - $smsCode");
 
       //stop listening for sms
-      SmsRetriever.stopListening();
+      SmsRetrieverApi.stopListening();
 
     }).catchError((_){
       print("sms error");

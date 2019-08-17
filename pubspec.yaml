@@ -1,6 +1,6 @@
 name: sms_retriever_api
 description: A Flutter plugin for Android automatic SMS verification using Google’s SMS retriever API . Currently supports on only Android.
-version: 0.0.1
+version: 0.0.2
 author: Md. Abdur Rouf <developer.rouf69nb@gmail.com>
 homepage: https://github.com/developer-rouf69nb/sms_retriever_api
 
