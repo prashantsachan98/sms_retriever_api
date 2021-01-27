@@ -68,12 +68,15 @@ class SmsRetrieverApiPlugin(private val context: Activity): MethodCallHandler {
       Log.e(javaClass::getSimpleName.name, "task starting failed")
       // ...
     }
-
-
   }
 
   private fun unregister() {
-    this.context.unregisterReceiver(receiver);
+    try {
+      this.context.unregisterReceiver(receiver);
+    }
+    catch (e: Exception){
+      //
+    }
   };
 
 
@@ -83,8 +86,6 @@ class SmsRetrieverApiPlugin(private val context: Activity): MethodCallHandler {
    * SmsRetriever.SMS_RETRIEVED_ACTION.
    */
   inner class MySMSBroadcastReceiver : BroadcastReceiver() {
-
-
     override fun onReceive(context: Context, intent: Intent) {
       if (SmsRetriever.SMS_RETRIEVED_ACTION == intent.action) {
         val extras = intent.extras
